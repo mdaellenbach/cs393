@@ -1,0 +1,34 @@
+<html>
+
+<style>
+ .emph{
+   font-style: italic;
+ }
+</style>
+
+<body>
+
+
+<p> To do: </p>
+
+<ol type= "I">
+
+<li> Eat </li>
+
+<li> Sleep </li>
+
+<li> Go to class </li>
+
+<li> Homework: 
+ <ol type="a">
+ <li> Networks - <span class="emph"> due 9/9/14 </span> </li>
+ <li> Algo - <span class="emph"> due 9/11/14 </span> </li>
+ <li> Spanish - <span class="emph"> due 9/5/14 </span> </li>
+ </ol>
+</li>
+
+</ol>
+
+</body>
+
+</html>
