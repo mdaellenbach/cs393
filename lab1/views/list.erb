@@ -1,0 +1,12 @@
+<form action='/' method='POST'>
+  <strong>New Task:</strong>
+  <input type='text' name='task' placeholder='task' />
+  <input type='text' name='date' placeholder='date' />
+  <input type='submit' value='Save'>
+</form>
+
+<ul>
+<% @tasks.each do |line| %>
+<li><%= line.task %> is due on  <%= line.date %></li>
+<% end %>
+</ul>
