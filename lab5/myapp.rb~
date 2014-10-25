@@ -1,0 +1,29 @@
+#myapp.rb
+
+#use bundler
+require 'rubygems'
+require 'bundler/setup'
+require 'json'
+Bundler.require
+
+ActiveRecord: :Base.establish_connection(
+  adapter: 'sqlite3',
+  database: 'db/development.db',
+  encoding: 'utf8'
+)
+
+#the fact that there's nothing after the '/' means that it's not going to a different webpage
+get '/' do
+  return erb :list
+end
+
+post '/' do
+  JSON.pretty_generate params
+  File.open("todo.txt", "a") do |file|
+  file.puts "#{params[:task]} is due on #{params[:date]}" 
+  @taskanddate = 
+  end
+  return redirect '/'
+end
+
+
