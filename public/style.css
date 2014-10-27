@@ -1,0 +1,27 @@
+/*This should have CSS code to make it formatted nicely
+
+There are slides by Quinn that explain CSS and links on the website that could help
+
+ */
+
+ body {
+
+   background: #EECCFF;
+
+ }
+
+ p {
+
+   color: #D00000;
+   font-weight: bold;
+
+ }
+
+ #pagetitle {
+
+   color: #0000FF;
+   font-weight: bold;
+   font-style: italic;
+   font-size: xx-large;
+
+ }

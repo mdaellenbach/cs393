@@ -2,11 +2,13 @@
   <strong>New Task:</strong>
   <input type='text' name='task' placeholder='task' />
   <input type='text' name='date' placeholder='date' />
-  <input type='submit' value='Save'>
+  <input type='submit' value='Save' />
 </form>
 
-<ul>
-<% @tasks.each do |line| %>
-<li><%= line.task %> is due on <%= line.date %></li>
+<% @tasks.each do |task| %>
+<form action='/delete' method='POST'>
+  <input type='hidden' name='id' value='<%= task.id %>'/>
+  <input type='submit' value='Delete' />
+</form>
+<p><%= task.task %> #<%= task.id %> is due on <%= task.date %></p>
 <% end %>
-</ul>
