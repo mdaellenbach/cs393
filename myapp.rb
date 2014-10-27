@@ -16,9 +16,12 @@ else
   )
 end
 
+
+
 #the fact that there's nothing after the '/' means that it's not going to a different webpage
 get '/' do
-  @tasks = TodoItem.all
+  @tasks = TodoItem.all.order(:date)
+
   erb :list
 end
 
