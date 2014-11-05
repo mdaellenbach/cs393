@@ -1,0 +1,13 @@
+<form action='/' method='POST'>
+  <strong>New User:</strong>
+  <input type='text' name='name' placeholder='name' />
+  <input type='submit' value='Save' />
+</form>
+
+<% @tasks.each do |user| %>
+<form action='/<%= user %>' method='POST'>
+  <input type='hidden' name='id' value='<%= task.id %>'/>
+  <input type='submit' value='Select' />
+</form>
+<p><%= user.name %>'s to-do list </p>
+<% end %>

@@ -5,6 +5,7 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require
 require './models/TodoItem'
+require './models/User'
 
 if ENV['DATABASE_URL']
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
@@ -24,19 +25,21 @@ get '/' do
   erb :list
 end
 
-get '/todos' do
-  @tasks = TodoItem.all.order(:date)
-  erb :list
-end
-
-get 'todos/:user_id' do
+get '/:user_id' do
   #The example is:
   #@model = User.find(params[:user_id])
   #erb :model
+  @users = User.find(todo_items).all.order(:date)
+  erb :userlist
+end
+
+post '/:user_id' do
+  TodoItem,create(params)
+  redirect '/:user_id'
 end
 
 post '/' do
-  TodoItem.create(params)
+  User.create(params)
   redirect '/'
 end
 

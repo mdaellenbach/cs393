@@ -29,6 +29,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.3.2)
+    rb-readline (0.5.1)
     ripl (0.7.1)
       bond (~> 0.5.1)
     ripl-multi_line (0.3.1)
@@ -63,6 +64,7 @@ DEPENDENCIES
   activerecord (= 4.0.4)
   pg
   rake
+  rb-readline
   shotgun (>= 0.9)
   sinatra (>= 1.4.5)
   sinatra-activerecord

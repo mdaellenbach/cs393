@@ -3,9 +3,11 @@ class CreateTodoItems < ActiveRecord::Migration
     create_table :todo_items do |t|
       t.string :task
       t.string :date
-      t.string :user_id
-    end
+      t.integer :user_id
+    end #do
 
     create_table :users do |t|
-  end
-end
+      t.string :name
+    end #do
+  end #def
+end #class
