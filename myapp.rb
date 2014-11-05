@@ -21,8 +21,18 @@ end
 #the fact that there's nothing after the '/' means that it's not going to a different webpage
 get '/' do
   @tasks = TodoItem.all.order(:date)
-
   erb :list
+end
+
+get '/todos' do
+  @tasks = TodoItem.all.order(:date)
+  erb :list
+end
+
+get 'todos/:user_id' do
+  #The example is:
+  #@model = User.find(params[:user_id])
+  #erb :model
 end
 
 post '/' do
@@ -30,8 +40,7 @@ post '/' do
   redirect '/'
 end
 
-#post '/delete' do
-#
-#  TodoItem.find(params).destroy
-#  redirect '/'
-#end
+post '/delete' do
+  TodoItem.find(params[:id]).destroy
+  redirect '/'
+end

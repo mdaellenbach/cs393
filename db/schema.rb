@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20141016192916) do
   create_table "todo_items", force: true do |t|
     t.string "task"
     t.string "date"
+    t.string "user_id"
   end
 
 end

@@ -1,1 +1,0 @@
-class TodoItem < ActiveRecord: :Base
