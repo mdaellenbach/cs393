@@ -44,6 +44,6 @@ post '/:user_id/delete' do
 end
 
 post '/:user_id/create' do
-  User.find(params[:id]).todo_items.create(params)
+  User.find(params[:user_id]).todo_items.create(params)
   redirect "/#{params[:user_id]}"
 end
