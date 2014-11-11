@@ -17,25 +17,15 @@ else
   )
 end
 
-
-
 #the fact that there's nothing after the '/' means that it's not going to a different webpage
 get '/' do
-  @tasks = TodoItem.all.order(:date)
-  erb :list
-end
-
-get '/:user_id' do
-  #The example is:
-  #@model = User.find(params[:user_id])
-  #erb :model
-  @users = User.find(todo_items).all.order(:date)
+  @users = User.all.order(:name)
   erb :userlist
 end
 
-post '/:user_id' do
-  TodoItem,create(params)
-  redirect '/:user_id'
+get '/:user_id' do
+  @tasks = TodoItem.find_by(user_id: params[:user_id])
+  erb :list
 end
 
 post '/' do
@@ -43,7 +33,17 @@ post '/' do
   redirect '/'
 end
 
-post '/delete' do
-  TodoItem.find(params[:id]).destroy
-  redirect '/'
+post '/:user_id' do
+  TodoItem.create(params)
+  redirect "/#{params[:user_id]}"
+end
+
+post '/:user_id/delete' do
+  TodoItem.find(params[:user_id]).destroy
+  redirect "/#{params[:user_id]}"
+end
+
+post '/:user_id/create' do
+  User.find(params[:id]).todo_items.create(params)
+  redirect "/#{params[:user_id]}"
 end
