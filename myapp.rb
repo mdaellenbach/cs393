@@ -24,7 +24,7 @@ get '/' do
 end
 
 get '/:user_id' do
-  @tasks = TodoItem.find_by(user_id: params[:user_id])
+  @tasks = TodoItem.find(params[:user_id])
   erb :list
 end
 

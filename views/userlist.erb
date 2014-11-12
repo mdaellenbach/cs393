@@ -1,15 +1,9 @@
-<% @users.each do |user| %>
 <form action='/' method='POST'>
   <strong>New User:</strong>
   <input type='text' name='name' placeholder='name' />
   <input type='submit' value='Save' />
 </form>
-<% end %>
 
 <% @users.each do |user| %>
-<form action='/<%= user.id %>' method='POST'>
-  <input type='hidden' name='id' value='<%= user.id %>'/>
-  <input type='submit' value='Select' />
-</form>
-<p><%= user.name %>'s to-do list </p>
+  <p> <a href="/<%= user.id %>"><%= user.name %></a>'s to-do list</p>
 <% end %>
